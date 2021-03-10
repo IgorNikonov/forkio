@@ -55,20 +55,19 @@ const buildImg = () => (
 );
 
 const build = gulp.series(cleanDist, buildCss, buildJs, buildImg);
-const dev = 
 
-const watcher = () => {
-  browserSync.init({
-    server: {
-      baseDir: './',
-    },
-  });
-}
+// const watch = () => {
+//   browserSync.init({
+//     server: {
+//       baseDir: './',
+//     },
+//   });
+// }
 
-gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
-gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
-gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
-gulp.watch(paths.src.html, build).on('change', browserSync.reload);
+// gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
+// gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
+// gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
+// gulp.watch(paths.src.html, build).on('change', browserSync.reload);
 
 // Tasks
 gulp.task('clean', cleanDist);
@@ -77,4 +76,4 @@ gulp.task('buildJs', buildJs);
 gulp.task('buildImg', buildImg);
 
 gulp.task('build', build);
-gulp.task('dev', dev);
+// gulp.task('dev', dev);
