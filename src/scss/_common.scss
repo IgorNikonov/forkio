@@ -1,3 +1,7 @@
+button {
+  border: none;
+}
+
 $grey: #c4c4c4;
 //  прописываем остальные нужные переменные и миксины
 
@@ -10,23 +14,24 @@ $layout_1200_maxWidth: 1200px;
 
 
 .container {  // общий wrapper
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 
-  @media (max-width: $layout_320_maxWidth) {
-
+  @media (max-width: $layout_320_minWidth) {
+    width: 320px;
   }
 
   @media (max-width: $layout_768_maxWidth) and (min-width: $layout_320_maxWidth+1) {
-
+    //max-width: $layout_768_maxWidth;
+    //min-width: $layout_320_maxWidth+1;
   }
 
   @media (max-width: $layout_1200_minWidth) and (min-width: $layout_768_maxWidth+1) {
-
+    //max-width: $layout_1200_minWidth;
+    //min-width: $layout_768_maxWidth+1;
   }
 
-  @media (max-width: $layout_1200_maxWidth) {
-
+  @media (min-width: $layout_1200_maxWidth) {
+    width: $layout_1200_maxWidth;
   }
 }

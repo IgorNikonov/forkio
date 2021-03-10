@@ -1,0 +1,76 @@
+.main-header{
+  padding: 32px 16px 30px;
+  background-color: #27262A;
+}
+.main-header__main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.main-nav__logo {
+  width: 43px;
+  height: 41px;
+}
+.btn{
+  color: white;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 700;
+  padding: 11px 25px;
+  border-radius: 40px;
+  background-color: #8D81AC;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-nav__burger-menu-tab {
+  width: 35px;
+  height: 35px;
+}
+.burger-menu-mobile {
+  display: none;  // по-загрузке страницы, выпадающее меню на моб.прилож.д/б выключено (включается скриптом)
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 105px;
+  right: 13px;
+  width: 92%;
+  background-color: #333333;
+}
+.active{
+  display: block;
+}
+.burger-menu-mobile__item {
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  padding-top: 29px;
+  padding-bottom: 21px;
+  padding-left: 48px;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 400;
+  border-bottom: 2px solid gray;
+
+  & a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #8D81AC;
+
+      &::before {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        content: ' ';
+        border-left: 8px solid #8D81AC;
+        height: 53px;
+        line-height: 53px;
+      }
+    }
+  }
+
+
+}
+

@@ -10,17 +10,17 @@ sass.compiler = require("node-sass");
 const paths = {
   html: "./index.html",
   src: {
-    scss: "./src/scss/**/*.scss",
-    js: "./src/js/*.js",
-    fonts: "./src/fonts/",
-    img: "./src/images/*",
+    scss:   "./src/scss/**/*.scss",
+    js:     "./src/js/*.js",
+    fonts:  "./src/fonts/",
+    img:    "./src/images/*",
   },
   build: {
-    value: "./build/",
-    fonts: "./build/fonts/",
-    css: "./build/css/",
-    js: "./build/js/",
-    img: "./build/img/",
+    value: "./dist/",
+    fonts: "./dist/fonts/",
+    css: "./dist/css/",
+    js: "./dist/js/",
+    img: "./dist/img/",
   },
 };
 
@@ -30,15 +30,15 @@ const buildJS = () =>
   gulp
     .src(paths.src.js)
     .pipe(concat("script.js"))
-    .pipe(gulp.dest(paths.build.js))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.build.js));
+    // .pipe(browserSync.stream());
 
 const buildCSS = () =>
   gulp
     .src(paths.src.scss)
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.build.css))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.build.css));
+    // .pipe(browserSync.stream());
 
 const buildIMG = () =>
   gulp
@@ -52,17 +52,21 @@ const cleanBuild = () =>
 
 const build = gulp.series(buildCSS, buildJS);
 
-const watcher = () => {
+const watcherGen = () => {
   browserSync.init({
     server: {
       baseDir: "./",
     },
   });
-
   gulp.watch(paths.src.scss, buildCSS).on("change", browserSync.reload);
   gulp.watch(paths.src.js, buildJS).on("change", browserSync.reload);
   gulp.watch(paths.src.img, buildIMG).on("change", browserSync.reload);
   gulp.watch(paths.html, build).on("change", browserSync.reload);
+};
+
+const myWatcher=()=>{
+  gulp.watch(paths.src.scss, buildCSS);
+  gulp.watch(paths.src.js, buildJS)
 };
 
 /*** TASKS ***/
@@ -70,7 +74,9 @@ gulp.task("clean", cleanBuild);
 gulp.task("buildCSS", buildCSS);
 gulp.task("buildJS", buildJS);
 
+
 gulp.task(
   "default",
-  gulp.series(cleanBuild, gulp.parallel(buildIMG, build), watcher)
+  // gulp.series(cleanBuild, gulp.parallel(buildIMG, build), watcherGen)
+     myWatcher
 );
