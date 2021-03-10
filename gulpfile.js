@@ -5,7 +5,8 @@ const gulp = require('gulp'),
   cleanCss = require('gulp-clean-css'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
-  browserSync = require('browser-sync').create();
+  browserSync = require('browser-sync').create(),
+  babel = require('gulp-babel');
 
 sass.compiler = require("node-sass");
 
@@ -31,6 +32,7 @@ const buildCss = () => (
   gulp.src(paths.src.scss)
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer({
+      browsers: ['> 0.1%'],
       cascade: false
     }))
     .pipe(cleanCss({ compatibility: 'ie8' }))
@@ -42,7 +44,10 @@ const buildCss = () => (
 const buildJs = () => (
   gulp.src(paths.src.js)
     .pipe(concat('scripts.min.js'))
-    .pipe(uglify())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify({ toplevel: true }))
     .pipe(gulp.dest(paths.dist.jsAndCss))
     .pipe(browserSync.stream())
 );
@@ -54,26 +59,28 @@ const buildImg = () => (
     .pipe(browserSync.stream())
 );
 
-const build = gulp.series(cleanDist, buildCss, buildJs, buildImg);
+const build = () => gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
 
-// const watch = () => {
-//   browserSync.init({
-//     server: {
-//       baseDir: './',
-//     },
-//   });
-// }
 
-// gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
-// gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
-// gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
-// gulp.watch(paths.src.html, build).on('change', browserSync.reload);
+const watch = () => {
+  browserSync.init({
+    server: {
+      baseDir: './',
+    },
+  });
+
+  gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
+  gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
+  gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
+  gulp.watch(paths.src.html, build).on('change', browserSync.reload);  
+}
 
 // Tasks
 gulp.task('clean', cleanDist);
 gulp.task('buildCss', buildCss);
 gulp.task('buildJs', buildJs);
 gulp.task('buildImg', buildImg);
+gulp.task('watch', watch);
 
 gulp.task('build', build);
 // gulp.task('dev', dev);
