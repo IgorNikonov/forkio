@@ -1,4 +1,4 @@
-@charset "UTF-8";
+//@charset "UTF-8";
 @font-face {
   font-family: 'Montserrat Subrayada';
   src: url("../../dist/fonts/Montserrat Subrayada/MontserratSubrayada-Regular.woff2");
@@ -18,3 +18,33 @@
   font-weight: 100;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../../dist/fonts/Lato/Lato-Bold.woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../../dist/fonts/Lato/Lato-BoldItalic.woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../../dist/fonts/Lato/Lato-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../../dist/fonts/Lato/Lato-Italic.woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+

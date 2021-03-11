@@ -1,0 +1,50 @@
+.user-reviews {
+  background: no-repeat center url("../../src/img/testmonials-bg 2.png");
+  background-size: 100% 100%;
+
+  .user-reviews__heading {
+    padding: 57px 30px 53px;
+  }
+
+  .user-reviews__card {
+
+    .user-reviews__img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .user-reviews__text {
+      font-family: 'Lato-Bold', sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      color: #FFFFFF;
+      text-align: justify;
+      padding: 33px 45px 45px;
+    }
+  }
+  .user-reviews__conclusion {
+    position: relative;
+    font-family: 'Lato-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: justify;
+    color: #A291A5;
+    padding: 3px 45px 38px;
+    //margin: 3px 45px 38px;
+    //border-bottom: 3px solid #645766;  //так можно сделать без псевдо-класса
+    &::after {
+      content: '';
+      position: absolute;
+      left: 45px;
+      bottom: 4px;
+      width: 80%;
+      border-bottom: 2px solid #645766; //а так привязка к ширине
+    }
+  }
+}
+
+

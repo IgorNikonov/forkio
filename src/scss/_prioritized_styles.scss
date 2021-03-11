@@ -4,7 +4,7 @@
 }
 
 @media (max-width: $layout_320_minWidth) {
-  .wrapper, .front-header  {
+  .wrapper, .front-header, .user-reviews  {
     width: $layout_320_minWidth;
   }
 }
