@@ -1,6 +1,10 @@
 @import "./_reset.scss";
+@import "./_fonts";
 @import "./_common.scss";
 @import "./sections/_001_section.scss";
 
 @import "./sections/media/_001_section_media.scss";
-@import "./_style.scss";
+@import "./_header_bars.scss";
+@import "./_fork_app.scss";
+@import "./_about_fork.scss";
+@import "./_prioritized_styles"; // стили используемые для переключения, должны обладать наибольшим весом

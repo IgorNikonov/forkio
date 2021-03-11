@@ -10,7 +10,9 @@
   width: 43px;
   height: 41px;
 }
-.btn{
+.btn {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
   color: white;
   font-size: 15px;
   line-height: 15px;
@@ -36,10 +38,9 @@
   right: 13px;
   width: 92%;
   background-color: #333333;
+  z-index: 2;
 }
-.active{
-  display: block;
-}
+
 .burger-menu-mobile__item {
   margin: 0 auto;
   list-style: none;
@@ -63,14 +64,12 @@
         position: absolute;
         top: 15px;
         left: 0;
-        content: ' ';
+        content: '';
         border-left: 8px solid #8D81AC;
         height: 53px;
         line-height: 53px;
       }
     }
   }
-
-
 }
 

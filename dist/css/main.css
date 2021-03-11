@@ -123,18 +123,35 @@ table {
 button {
   border: none; }
 
+@font-face {
+  font-family: 'Montserrat Subrayada';
+  src: url("../../dist/fonts/Montserrat Subrayada/MontserratSubrayada-Regular.woff2");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat Subrayada-light";
+  src: url("../../dist/fonts/Montserrat Alternates/Montserrat-Light.woff2");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat Subrayada-thin';
+  src: url("../../dist/fonts/Montserrat Alternates/Montserrat-Thin.woff2");
+  font-weight: 100;
+  font-style: normal; }
+
 button {
   border: none; }
 
-.container {
+.text-sections-styling {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center; }
+
+.wrapper {
   width: 100%;
   margin: 0 auto; }
-  @media (max-width: 320px) {
-    .container {
-      width: 320px; } }
-  @media (min-width: 1200px) {
-    .container {
-      width: 1200px; } }
 
 .main-header {
   padding: 32px 16px 30px;
@@ -149,6 +166,8 @@ button {
   height: 41px; }
 
 .btn {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
   color: white;
   font-size: 15px;
   line-height: 15px;
@@ -171,10 +190,8 @@ button {
   top: 105px;
   right: 13px;
   width: 92%;
-  background-color: #333333; }
-
-.active {
-  display: block; }
+  background-color: #333333;
+  z-index: 2; }
 
 .burger-menu-mobile__item {
   margin: 0 auto;
@@ -196,7 +213,83 @@ button {
         position: absolute;
         top: 15px;
         left: 0;
-        content: ' ';
+        content: '';
         border-left: 8px solid #8D81AC;
         height: 53px;
         line-height: 53px; }
+
+.front-header {
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
+  color: white;
+  background-image: url("../../src/img/2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  margin: 0 auto; }
+
+.front-header__heading {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 19px; }
+
+.front-header__text {
+  font-size: 18px;
+  line-height: 24px;
+  color: #8D81AC;
+  padding: 20px 25px 18px; }
+
+.front-header__version {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #848E97; }
+
+.download-subsection {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-80%); }
+  .download-subsection .front-header--download-btn {
+    width: 160%; }
+  .download-subsection .front-header__trial-period-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #848E97;
+    bottom: -18px;
+    padding-top: 14px;
+    width: 160%; }
+
+.revolutionary-editor__heading {
+  padding-top: 130px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #635C73; }
+
+h1 {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF; }
+
+.active {
+  display: block; }
+
+@media (max-width: 320px) {
+  .wrapper, .front-header {
+    width: 320px; } }
+
+@media (min-width: 1200px) {
+  .wrapper, .front-header {
+    width: 1200px; } }

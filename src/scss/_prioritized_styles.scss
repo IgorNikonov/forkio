@@ -1,0 +1,17 @@
+@import "./variables";
+.active{
+  display: block;
+}
+
+@media (max-width: $layout_320_minWidth) {
+  .wrapper, .front-header  {
+    width: $layout_320_minWidth;
+  }
+}
+@media (max-width: $layout_768_maxWidth) and (min-width: $layout_320_maxWidth+1) {}
+@media (max-width: $layout_1200_minWidth) and (min-width: $layout_768_maxWidth+1) {}
+@media (min-width: $layout_1200_maxWidth) {
+  .wrapper, .front-header  {
+    width: $layout_1200_maxWidth;
+  }
+}

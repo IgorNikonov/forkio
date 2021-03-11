@@ -22,5 +22,8 @@ const hideMobileBurgerMenu=()=>{
 
 
 burgerMenuSwitch.addEventListener('mouseover', showMobileBurgerMenu);
+burgerMenuSwitch.addEventListener('touchstart', showMobileBurgerMenu);
 burgerMenuSwitch.addEventListener('click', hideMobileBurgerMenu);
-showMobileBurgerMenu();
+
+console.log('выполнен 001_burger_menu_switch.js');
+console.log('выполнен 002_main.js');
