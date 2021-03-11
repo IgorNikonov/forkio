@@ -6,6 +6,7 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   browserSync = require('browser-sync').create(),
+  imagemin = require('gulp-imagemin'),
   babel = require('gulp-babel');
 
 sass.compiler = require("node-sass");
@@ -31,10 +32,7 @@ const cleanDist = () => gulp.src(paths.dist.self, { allowEmpty: true }).pipe(cle
 const buildCss = () => (
   gulp.src(paths.src.scss)
     .pipe(sass().on("error", sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['> 0.1%'],
-      cascade: false
-    }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCss({ compatibility: 'ie8' }))
     .pipe(concat('styles.min.css'))
     .pipe(gulp.dest(paths.dist.jsAndCss))
@@ -59,10 +57,11 @@ const buildImg = () => (
     .pipe(browserSync.stream())
 );
 
+// doesn't work (says that I forgot to signal async completion)
 const build = () => gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
 
-
-const watch = () => {
+// doesn't work either
+const dev = () => {
   browserSync.init({
     server: {
       baseDir: './',
@@ -80,7 +79,12 @@ gulp.task('clean', cleanDist);
 gulp.task('buildCss', buildCss);
 gulp.task('buildJs', buildJs);
 gulp.task('buildImg', buildImg);
-gulp.task('watch', watch);
 
+// temporary task
+gulp.task('watchCss', function() {
+  return gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
+});
+
+// Main tasks
 gulp.task('build', build);
-// gulp.task('dev', dev);
+gulp.task('dev', dev);

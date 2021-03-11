@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/styles.min.css">
     <title>forkio</title>
 </head>
 <body>
-    <header class="main-header">
+    <!-- <header class="main-header">
         <nav class="main-header__main-nav">
             <a href="#" class="main-nav__logo"></a>
             <button class="main-nav__btn">Buy Now</button>
             <span class="main-nav__burger-menu"></span>
         </nav>
-        <section class="main-header__about container">
+        <section class="main-header__about_container">
             <h1 class="about__heading">Fork App</h1>
             <p class="about__text">A Real Gamechanger In The World Of Web-Development</p>
             <p class="about__version">V.2.8 FOR MAC AND WINDOWS</p>
@@ -22,103 +25,129 @@
                 <p class="download-container__text"></p>
             </div>
         </section>
-        <section class="revolutionary-editor container">
-            <h2 class="revolutionary-editor__heading">REVOLUTIONARY EDITOR</h2>
-            <p class="revolutionary-editor__text">Aenean cursus imperdiet nisl id fermentum. Aliquam pharetra dui laoreet vulputate dignissim. Sed id metus id quam auctor molestie eget ut augue.</p>
-            <div class="revolutionary-editor__btn-container">
-                <button class="btn-container__btn"></button>
-                <button class="btn-container__btn"></button>
-                <button class="btn-container__btn"></button>
+    </header> -->
+    <section class="revolutionary-editor container">
+        <h2 class="revolutionary-editor__heading">REVOLUTIONARY EDITOR</h2>
+        <p class="revolutionary-editor__text">Aenean cursus imperdiet nisl id fermentum. Aliquam pharetra dui laoreet vulputate dignissim. Sed id metus id quam auctor molestie eget ut augue.</p>
+        <ul class="revolutionary-editor__btn-container">
+            <li class="revolutionary-editor__btn">
+                <span class="revolutionary-editor__btn_left">
+                    <img src="./src/img/eye.svg" alt="github icon" class="revolutionary-editor__btn__icon">
+                    Watch
+                </span>
+                <span class="revolutionary-editor__btn_right">1,397</span>
+            </li>
+            <li class="revolutionary-editor__btn">
+                <span class="revolutionary-editor__btn_left">
+                    <img src="./src/img/star.svg" alt="github icon" class="revolutionary-editor__btn__icon">
+                    Star
+                </span>
+                <span class="revolutionary-editor__btn_right">21,038</span>
+            </li>
+            <li class="revolutionary-editor__btn">
+                <span class="revolutionary-editor__btn_left">
+                    <img src="./src/img/fork.svg" alt="github icon" class="revolutionary-editor__btn__icon">
+                    Fork
+                </span>
+                <span class="revolutionary-editor__btn_right">4,391</span>
+            </li>
+        </ul>
+    </section>
+    <section class="what-you-get container">
+        <h2 class="what-you-get__heading">Here is what you get</h2>
+        <div class="what-you-get__card">
+            <img src="./src/img/icon1.png" alt="icon of a provided service" width="111px" height="64px" class="what-you-get__icon card__flex-item goright">
+            <div class="card__flex-item">
+                <h4 class="what-you-get__subheading">Creatred to Make The Web Better</h4>
+                <p class="what-you-get__text">Aenean cursus imperdiet nisl id fermentum. Aliquam pharetra dui laoreet vulputate dignissim. Sed id metus id quam auctor molestie eget ut augue.</p>
             </div>
-        </section>
-        <section class="what-you-get container">
-            <h2 class="what-you-get__heading">Here is what you get</h2>
-            <div class="what-you-get__card">
-                <img src="" alt="icon of a provided service" class="what-you-get__icon">
-                <h4 class="what-you-get__heading"></h4>
-                <p class="what-you-get__text"></p>
+        </div>
+        <div class="what-you-get__card">
+            <img src="./src/img/icon2.png" alt="icon of a provided service"width="90px" height="80px" class="what-you-get__icon card__flex-item">
+            <div class="card__flex-item">
+                <h4 class="what-you-get__subheading">Incredibly Powerful Tool</h4>
+                <p class="what-you-get__text">Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat massa placerat ac. Curabitur dapibus iaculis mi gravida luctus. Aliquam erat volutpat. </p>
             </div>
-            <div class="what-you-get__card">
-                <img src="" alt="icon of a provided service" class="what-you-get__icon">
-                <h4 class="what-you-get__heading"></h4>
-                <p class="what-you-get__text"></p>
+        </div>
+        <div class="what-you-get__card">
+            <img src="./src/img/icon3.png" alt="icon of a provided service"width="60px" height="84px" class="what-you-get__icon card__flex-item">
+            <div class="card__flex-item">
+                <h4 class="what-you-get__subheading">Experimental Stuff</h4>
+                <p class="what-you-get__text">Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat massa placerat ac. Curabitur dapibus iaculis mi gravida luctus. Aliquam erat volutpat. </p>
             </div>
-            <div class="what-you-get__card">
-                <img src="" alt="icon of a provided service" class="what-you-get__icon">
-                <h4 class="what-you-get__heading"></h4>
-                <p class="what-you-get__text"></p>
+        </div>
+        <div class="what-you-get__card">
+            <img src="./src/img/icon4.png" alt="icon of a provided service"width="71px" height="71px" class="what-you-get__icon card__flex-item">
+            <div class="card__flex-item">
+                <h4 class="what-you-get__subheading">Creatred to Make The Web Better</h4>
+                <p class="what-you-get__text">Maecenas eu dictum felis, a dignissim nibh. Mauris rhoncus felis odio, ut volutpat massa placerat ac. Curabitur dapibus iaculis mi gravida luctus. Aliquam erat volutpat. </p>
             </div>
-            <div class="what-you-get__card">
-                <img src="" alt="icon of a provided service" class="what-you-get__icon">
-                <h4 class="what-you-get__heading"></h4>
-                <p class="what-you-get__text"></p>
+        </div>
+        <img src="./src/img/editor.png" alt="editor image" class="wat-you-get__editor-img">
+    </section>
+    <!-- <section class="user-reviews_container">
+        <h1 class="user-reviews__heading">People Are Talking About Fork</h1>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </p>
+        </div>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum, rhoncus molestie neque ac, mollis eleifend nibh.</p>
+        </div>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">In efficitur in velit et tempus. Duis nec odio dapibus, suscipit erat fringilla, imperdiet nibh. Morbi tempus auctor felis ac vehicula. </p>
+        </div>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </p>
+        </div>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">Praesent ut eros tristique, malesuada lectus vel, lobortis massa. Nulla faucibus lorem id arcu consequat faucibus. </p>
+        </div>
+        <div class="user-reviews__card">
+            <img src="" alt="partner logo" class="user-reviews__img">
+            <p class="user-reviews__text">Fusce pharetra erat id odio blandit, nec pharetra eros venenatis. Pellentesque porttitor cursus massa et vestibulum.</p>
+        </div>
+        <p class="user-reviews__conclusion">Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis vitae aliquet id, imperdiet quis nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+    </section>
+    <section class="pricing_container">
+        <h1 class="pricing__heading">Fork Subscription Pricing</h1>
+        <div class="pricing__card-container">
+            <div class="pricing__card">
+                <h4 class="pricing__card__heading">STUDENTS</h4>
+                <P class="pricing__card__price">$29</P>
+                <p>PER MONTH</p>
+                <p>Personal License</p>
+                <button class="pricing__card__button">PURCHASE</button>
             </div>
-            <img src="" alt="editor image" class="wat-you-get__editor-img">
-        </section>
-        <section class="user-reviews container">
-            <h1 class="user-reviews__heading">People Are Talking About Fork</h1>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </p>
+            <div class="pricing__card">
+                <h4 class="pricing__card__heading">PROFESSIONAL</h4>
+                <P class="pricing__card__price">$59</P>
+                <p>PER MONTH</p>
+                <p>Professional License</p>
+                <p>Email Support</p>
+                <button class="pricing__card__button">PURCHASE</button>
             </div>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum, rhoncus molestie neque ac, mollis eleifend nibh.</p>
+            <div class="pricing__card">
+                <h4 class="pricing__card__heading">AGENCY</h4>
+                <P class="pricing__card__price">$99</P>
+                <p>PER MONTH</p>
+                <p>1-12 Team Members</p>
+                <p>Phone Support</p>
+                <button class="pricing__card__button">PURCHASE</button>
             </div>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">In efficitur in velit et tempus. Duis nec odio dapibus, suscipit erat fringilla, imperdiet nibh. Morbi tempus auctor felis ac vehicula. </p>
+            <div class="pricing__card">
+                <h4 class="pricing__card__heading">ENTERPRISE</h4>
+                <P class="pricing__card__price">$159</P>
+                <p>PER MONTH</p>
+                <p>Unlimited Team Members</p>
+                <p>24/7 Phone Support</p>
+                <button class="pricing__card__button">PURCHASE</button>
             </div>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </p>
-            </div>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">Praesent ut eros tristique, malesuada lectus vel, lobortis massa. Nulla faucibus lorem id arcu consequat faucibus. </p>
-            </div>
-            <div class="user-reviews__card">
-                <img src="" alt="partner logo" class="user-reviews__img">
-                <p class="user-reviews__text">Fusce pharetra erat id odio blandit, nec pharetra eros venenatis. Pellentesque porttitor cursus massa et vestibulum.</p>
-            </div>
-            <p class="user-reviews__conclusion">Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis vitae aliquet id, imperdiet quis nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-        </section>
-        <section class="pricing container">
-            <h1 class="pricing__heading">Fork Subscription Pricing</h1>
-            <div class="pricing__card-container">
-                <div class="pricing__card">
-                    <h4 class="pricing__card__heading">STUDENTS</h4>
-                    <P class="pricing__card__price">$29</P>
-                    <p>PER MONTH</p>
-                    <p>Personal License</p>
-                    <button class="pricing__card__button">PURCHASE</button>
-                </div>
-                <div class="pricing__card">
-                    <h4 class="pricing__card__heading">PROFESSIONAL</h4>
-                    <P class="pricing__card__price">$59</P>
-                    <p>PER MONTH</p>
-                    <p>Professional License</p>
-                    <p>Email Support</p>
-                    <button class="pricing__card__button">PURCHASE</button>
-                </div>
-                <div class="pricing__card">
-                    <h4 class="pricing__card__heading">AGENCY</h4>
-                    <P class="pricing__card__price">$99</P>
-                    <p>PER MONTH</p>
-                    <p>1-12 Team Members</p>
-                    <p>Phone Support</p>
-                    <button class="pricing__card__button">PURCHASE</button>
-                </div>
-                <div class="pricing__card">
-                    <h4 class="pricing__card__heading">ENTERPRISE</h4>
-                    <P class="pricing__card__price">$159</P>
-                    <p>PER MONTH</p>
-                    <p>Unlimited Team Members</p>
-                    <p>24/7 Phone Support</p>
-                    <button class="pricing__card__button">PURCHASE</button>
-                </div>
-            </div>
-        </section>
-    </header>
+        </div>
+    </section>
 </body>
-</html>
+</html> -->

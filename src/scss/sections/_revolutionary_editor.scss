@@ -1,0 +1,84 @@
+// Variables
+$text-font-family: 'Lato', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+$text-line-height: 20px;
+$rev-ed-heading-font-size: 26px;
+$text-padding: 0 15px;
+
+// Mixins
+@mixin heading-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+// Block elements (containers etc.)
+
+.container {
+  padding: 0 10px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.revolutionary-editor__heading {
+  @include heading-font;
+  font-size: $rev-ed-heading-font-size;
+  line-height: 28px;
+  color: #635C73;
+  margin: 20px auto;
+}
+
+.revolutionary-editor__text {
+  font-family: $text-font-family;
+  line-height: $text-line-height;
+  font-size: 14px;
+  color: #323232;
+  margin-bottom: 17px;
+  padding: $text-padding;
+}
+
+.revolutionary-editor__btn-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 300px;
+  margin-bottom: 60px;
+
+  @media (min-width: 450px) {
+    width: 430px
+  }
+}
+
+.revolutionary-editor__btn {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 10px 8px;
+  grid-gap: 2px;
+
+  &__icon {
+    height: 17px;
+    width: 17px;
+    position: relative;
+    top: 4px;
+  }
+}
+
+.revolutionary-editor__btn_left {
+  border: 1px solid #b9b6b6;
+  background: #d1d5da;
+  padding: 5px 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+.revolutionary-editor__btn_right {
+  @extend .revolutionary-editor__btn_left;
+  background: white;
+  border-radius: 0 3px 3px 0;
+  border-left: 0;
+}

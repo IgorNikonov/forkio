@@ -1,9 +1,11 @@
-@import "./_reset.scss";
-@import "./_common.scss";
+@import "./_reset";
+@import "./_common";
 
-@import "./sections/_001_section.scss";
+@import "./sections/_001_section";
+@import "./sections/revolutionary_editor";
+@import "./sections/what_you_get";
 
 
 
 
-@import "./sections/media/_001_section_media.scss";
+@import "./sections/media/_001_section_media";
