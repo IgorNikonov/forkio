@@ -5,6 +5,7 @@
 .main-header__nav-mobile {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .main-header__nav-tablet {
   display: none;
@@ -12,10 +13,12 @@
   .main-header__nav-tablet-first {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .main-header__nav-tablet-second {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
   }
 }
@@ -25,24 +28,40 @@
   justify-content: space-between;
   .main-header__menu-LG {
     display: flex;
+    align-items: center;
     gap: 40px;
   }
 }
 .main-header__menu-items {
   list-style: none;
+  }
+.main-header__menu-items-href {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 18px;
   color: #8D81AC;
+  &:hover {
+    color: white;
+  }
 }
 .main-nav__logo {
-  width: 43px;
-  height: 41px;
+     width: 43px;
+     height: 41px;
+  //про подмену изображения в CSS:  https://overcoder.net/q/359230/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D0%BE%D0%B5-img-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-css
+     &:hover {     // замена через CSS изображения: старое сворачиваем по width:0, height: 0, а новое добавляем через background-image и размер даем через padding
+       background: no-repeat url("../../src/img/main-nav__logo_white1.png");
+       background-size: 100%;
+       padding: 21px;
+       width: 0;
+       height: 0;
+     }
 }
 .main-nav__forkio-logo {
   color: #8D81AC;
+  position: relative;
+  top: -10px;
   padding: 0 0 20px 10px;
   font-family: 'Lato', sans-serif;
   font-style: normal;
@@ -50,6 +69,10 @@
   font-size: 24px;
   line-height: 40px;
   text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
 }
 
 .btn {
@@ -96,6 +119,7 @@
   line-height: 26px;
   font-weight: 400;
   border-bottom: 2px solid gray;
+
 
   & a {
     text-decoration: none;
