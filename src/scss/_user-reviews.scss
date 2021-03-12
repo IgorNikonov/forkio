@@ -2,8 +2,11 @@
   background: no-repeat center url("../../src/img/testmonials-bg 2.png");
   background-size: 100% 100%;
 
-  .user-reviews__heading {
-    padding: 57px 30px 53px;
+  .user-reviews__container {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .user-reviews__card {
@@ -24,6 +27,12 @@
       padding: 33px 45px 45px;
     }
   }
+
+  .user-reviews__heading {
+    padding: 57px 30px 53px;
+  }
+
+
   .user-reviews__conclusion {
     position: relative;
     font-family: 'Lato-Regular', sans-serif;
@@ -46,5 +55,7 @@
     }
   }
 }
+
+
 
 

@@ -2,14 +2,56 @@
   padding: 32px 16px 30px;
   background-color: #27262A;
 }
-.main-header__main-nav {
+.main-header__nav-mobile {
   display: flex;
   justify-content: space-between;
+}
+.main-header__nav-tablet {
+  display: none;
+  color: #8D81AC;
+  .main-header__nav-tablet-first {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-header__nav-tablet-second {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+.main-header__nav-LG {
+  display: none;
+  color: #8D81AC;
+  justify-content: space-between;
+  .main-header__menu-LG {
+    display: flex;
+    gap: 40px;
+  }
+}
+.main-header__menu-items {
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  color: #8D81AC;
 }
 .main-nav__logo {
   width: 43px;
   height: 41px;
 }
+.main-nav__forkio-logo {
+  color: #8D81AC;
+  padding: 0 0 20px 10px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
 .btn {
   font-family: 'Montserrat Subrayada', sans-serif;
   text-align: center;
@@ -22,6 +64,8 @@
   background-color: #8D81AC;
   &:hover {
     cursor: pointer;
+    background-color: white;
+    color: #8D81AC;
   }
 }
 
