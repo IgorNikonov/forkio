@@ -1,18 +1,20 @@
-// Variables
-$text-font-family: 'Lato', sans-serif;
-$heading-font-family: 'Montserrat', sans-serif;
-$text-line-height: 20px;
-$rev-ed-heading-font-size: 26px;
-$text-padding: 0 15px;
+// // Variables
+// $text-font-family: 'Lato', sans-serif;
+// $heading-font-family: 'Montserrat', sans-serif;
+// $text-line-height: 20px;
 
-// Mixins
-@mixin heading-font {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-}
+// $rev-ed-heading-font-size: 26px;
+// $pricing-heading-font-size: 28px;
+
+// $text-padding: 0 15px;
+
+// // Mixins
+// @mixin heading-font {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 700;
+// }
 
 // Block elements (containers etc.)
-
 .container {
   padding: 0 10px;
   text-align: center;
@@ -29,6 +31,10 @@ $text-padding: 0 15px;
   line-height: 28px;
   color: #635C73;
   margin: 20px auto;
+
+  @media(min-width: 768px) {
+    font-size: 42px;
+  }
 }
 
 .revolutionary-editor__text {
@@ -38,6 +44,11 @@ $text-padding: 0 15px;
   color: #323232;
   margin-bottom: 17px;
   padding: $text-padding;
+
+  @media(min-width: 768px) {
+    font-size: 21px;
+    line-height: 32px;
+  }
 }
 
 .revolutionary-editor__btn-container {

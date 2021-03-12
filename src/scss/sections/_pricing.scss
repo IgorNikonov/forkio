@@ -1,0 +1,120 @@
+.pricing {
+  background: #634566;
+}
+
+.pricing__card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: $text-padding;
+  margin: o auto;
+
+  @media(min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 70px;
+    
+  }
+}
+
+.pricing__heading {
+  @include heading-font;
+  line-height: 42px;
+  color: $pricing-color;
+  font-size: $pricing-heading-font-size;
+  margin-bottom: 15px;
+
+  @media(min-width: 768px) {
+    font-size: 42px;
+    line-height: 44px;
+  }
+}
+
+.pricing__card {
+  background: rgba(255, 255, 255, 0.11);
+  height: 457px;
+  width: 257px;
+  margin: 15px 0;
+
+  &__heading {
+    background: rgba(255, 255, 255, 0.06);
+    font-family: $heading-font-family;
+    font-size: 24px;
+    color: $pricing-color;
+    padding: 36px 0;
+  }
+
+  &__price {
+    @include heading-font;
+    font-size: 60px;
+    margin-top: 30px;
+    color: $pricing-color;
+  }
+
+  &__per-month {
+    color: $pricing-color;
+    font-family: $heading-font-family;
+    line-height: 60px;
+  }
+
+  &__description {
+    @extend .pricing__card__per-month;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &__button {
+    background: rgba(255, 255, 255, 0.15);
+    font-family: $heading-font-family;
+    color: $pricing-color;
+    font-size: 15px;
+    padding: 12px 38px;
+    border-radius: 32px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    margin-top: 34px;
+  }
+}
+
+.card-bigger {
+  background: rgba(70, 48, 72, 0.84);
+  height: 535px;
+  width: 290px;
+
+  &__heading {
+    @extend .pricing__card__heading;
+    background: rgba(0, 0, 0, 0.11);
+  }
+
+  &__price {
+    @extend .pricing__card__price;
+    font-size: 82px;
+    margin-top: 14px;
+  }
+
+  &__button {
+    @extend .pricing__card__button;
+    margin-top: 80px;
+  }
+
+  @media(min-width: 768px) {
+    // position: relative;
+    // right: 25px;
+  }
+}
+
+.line-after::after {
+  content: '';
+  border-bottom: 4px solid #8D81AC;
+  display: block;
+  width: 60px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

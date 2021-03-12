@@ -36,7 +36,7 @@ const buildCss = () => (
     .pipe(cleanCss({ compatibility: 'ie8' }))
     .pipe(concat('styles.min.css'))
     .pipe(gulp.dest(paths.dist.jsAndCss))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream: true}))
 );
 
 const buildJs = () => (
@@ -47,18 +47,20 @@ const buildJs = () => (
     }))
     .pipe(uglify({ toplevel: true }))
     .pipe(gulp.dest(paths.dist.jsAndCss))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream: true}))
 );
 
 const buildImg = () => (
   gulp.src(paths.src.img)
     .pipe(imagemin())
     .pipe(gulp.dest(paths.dist.img))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream: true}))
 );
 
 // doesn't work (says that I forgot to signal async completion)
-const build = () => gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
+const build = () => {
+  return gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
+}
 
 // doesn't work either
 const dev = () => {
@@ -71,7 +73,11 @@ const dev = () => {
   gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
   gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
   gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
-  gulp.watch(paths.src.html, build).on('change', browserSync.reload);  
+  // gulp.watch(paths.src.html, build).on('change', browserSync.reload);
+  
+  // gulp.watch('./src/scss/**/*.scss', buildCss).on('change', browserSync.reload);
+  // gulp.watch('./src/js/*.js', buildJs).on('change', browserSync.reload);
+  // gulp.watch('./src/img/*', buildImg).on('change', browserSync.reload);
 }
 
 // Tasks
@@ -88,3 +94,9 @@ gulp.task('watchCss', function() {
 // Main tasks
 gulp.task('build', build);
 gulp.task('dev', dev);
+
+
+
+exports.default = gulp.series(gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg)), dev)
+
+// Had to hardcode because it didn't work the way it should have.
