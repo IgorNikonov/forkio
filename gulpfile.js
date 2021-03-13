@@ -57,12 +57,10 @@ const buildImg = () => (
     .pipe(browserSync.stream({stream: true}))
 );
 
-// doesn't work (says that I forgot to signal async completion)
-const build = () => {
-  return gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
+async function build () {
+  gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg))
 }
 
-// doesn't work either
 const dev = () => {
   browserSync.init({
     server: {
@@ -73,11 +71,7 @@ const dev = () => {
   gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
   gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
   gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
-  // gulp.watch(paths.src.html, build).on('change', browserSync.reload);
-  
-  // gulp.watch('./src/scss/**/*.scss', buildCss).on('change', browserSync.reload);
-  // gulp.watch('./src/js/*.js', buildJs).on('change', browserSync.reload);
-  // gulp.watch('./src/img/*', buildImg).on('change', browserSync.reload);
+  gulp.watch(paths.html, build).on('change', browserSync.reload);
 }
 
 // Tasks
@@ -86,17 +80,9 @@ gulp.task('buildCss', buildCss);
 gulp.task('buildJs', buildJs);
 gulp.task('buildImg', buildImg);
 
-// temporary task
-gulp.task('watchCss', function() {
-  return gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
-});
 
 // Main tasks
 gulp.task('build', build);
 gulp.task('dev', dev);
 
-
-
-exports.default = gulp.series(gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg)), dev)
-
-// Had to hardcode because it didn't work the way it should have.
+gulp.task('default', dev);
