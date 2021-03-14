@@ -1,12 +1,13 @@
+// Common styles
 @import "./_reset";
 @import "./_common";
 
-@import "./sections/_001_section";
+// Sections styles
 @import "./sections/_revolutionary_editor";
 @import "./sections/_what_you_get";
 @import "./sections/_pricing";
 
-
-
-
-@import "./sections/media/_001_section_media";
+// Media queries
+@import "./sections/media/_revolutionary_editor_media";
+@import "./sections/media/_what_you_get_media";
+@import "./sections/media/_pricing_media";

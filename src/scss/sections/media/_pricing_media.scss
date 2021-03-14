@@ -1,0 +1,42 @@
+@media(min-width: 768px) {
+  .pricing {
+    padding: 55px 0;
+  }
+
+  .pricing__card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .pricing__heading {
+    font-size: 42px;
+    line-height: 44px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .pricing__heading {
+    margin-bottom: 30px;
+  }
+}
+
+// Interim
+@media(min-width: 768px) and (max-width: 1199px) {
+  .pricing__card-container {
+    width: 560px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .pricing__card:last-of-type {
+    position: relative;
+    right: 8px;
+  }
+
+  .card-bigger {
+    position: relative;
+    right: 25px;
+  }
+}
