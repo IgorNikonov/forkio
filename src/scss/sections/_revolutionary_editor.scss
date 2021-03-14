@@ -22,7 +22,7 @@
 }
 
 * {
-  box-sizing: border-box;
+  // box-sizing: border-box;
 }
 
 .revolutionary-editor__heading {
@@ -42,12 +42,18 @@
   line-height: $text-line-height;
   font-size: 14px;
   color: #323232;
-  margin-bottom: 17px;
+  margin-bottom: 20px;
   padding: $text-padding;
 
   @media(min-width: 768px) {
     font-size: 21px;
     line-height: 32px;
+  }
+
+  @media(min-width: 920px) {
+    width: 885px;
+    margin: 0 auto;
+    padding-bottom: 20px;
   }
 }
 
@@ -58,10 +64,14 @@
   flex-wrap: wrap;
   margin: 0 auto;
   width: 300px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 
-  @media (min-width: 450px) {
+  @media(min-width: 450px) {
     width: 430px
+  }
+
+  @media(min-width: 1200px) {
+    padding-bottom: 30px;
   }
 }
 

@@ -1,5 +1,12 @@
 .pricing {
   background: #634566;
+
+  padding-top: 10px;
+
+  @media (min-width: 768px) {
+    padding: 55px 0;
+  }
+
 }
 
 .pricing__card-container {
@@ -14,8 +21,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 70px;
-    
+    margin: 0 auto;
+  }
+
+  @media(min-width: 768px) and (max-width: 1199px) {
+    width: 560px;
   }
 }
 
@@ -29,6 +39,10 @@
   @media(min-width: 768px) {
     font-size: 42px;
     line-height: 44px;
+  }
+
+  @media(min-width: 1200px) {
+    margin-bottom: 30px;
   }
 }
 
@@ -79,6 +93,13 @@
   }
 }
 
+.pricing__card:last-of-type {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    position: relative;
+    right: 8px;
+  }
+}
+
 .card-bigger {
   background: rgba(70, 48, 72, 0.84);
   height: 535px;
@@ -100,9 +121,9 @@
     margin-top: 80px;
   }
 
-  @media(min-width: 768px) {
-    // position: relative;
-    // right: 25px;
+  @media(min-width: 768px) and (max-width: 1199px) {
+    position: relative;
+    right: 25px;
   }
 }
 
