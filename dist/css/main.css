@@ -124,44 +124,44 @@ button {
   border: none; }
 
 @font-face {
-  font-family: 'Montserrat Subrayada';
-  src: url("../../dist/fonts/Montserrat Subrayada/MontserratSubrayada-Regular.woff2");
-  font-weight: bold;
+  font-family: 'Montserrat';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-weight: Bold;
   font-style: normal; }
 
 @font-face {
-  font-family: "Montserrat Subrayada-light";
-  src: url("../../dist/fonts/Montserrat Alternates/Montserrat-Light.woff2");
-  font-weight: 300;
+  font-family: 'Montserrat SemiBold';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Semibold.woff2") format("woff2");
+  font-weight: Bold;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Montserrat Subrayada-thin';
-  src: url("../../dist/fonts/Montserrat Alternates/Montserrat-Thin.woff2");
-  font-weight: 100;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Lato-Bold";
-  src: url("../../dist/fonts/Lato/Lato-Bold.woff2");
-  font-weight: bold;
+  font-family: 'Montserrat';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+  font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Lato-Bold";
-  src: url("../../dist/fonts/Lato/Lato-BoldItalic.woff2");
+  src: url("../../dist/fonts/Lato/Lato-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../../dist/fonts/Lato/Lato-BoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic; }
 
 @font-face {
   font-family: "Lato-Regular";
-  src: url("../../dist/fonts/Lato/Lato-Regular.woff2");
+  src: url("../../dist/fonts/Lato/Lato-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: "Lato-Regular";
-  src: url("../../dist/fonts/Lato/Lato-Italic.woff2");
+  src: url("../../dist/fonts/Lato/Lato-Italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic; }
 
@@ -253,7 +253,7 @@ a {
     color: white; }
 
 .btn {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   color: white;
   font-size: 15px;
@@ -310,14 +310,23 @@ a {
 .front-header {
   box-sizing: border-box;
   position: relative;
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Montserrat SemiBold', sans-serif;
   text-align: center;
   color: white;
-  background-image: url("../../src/img/2.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: center;
   height: 600px;
   margin: 0 auto; }
+
+.front-header--mobile-mode {
+  background-image: url("../../src/img/2.png");
+  background-size: 100% 100%; }
+
+.front-header--tablet-mode {
+  background-image: url("../../src/img/keyboard-small.png"); }
+
+.front-header--tablet-LG-mode {
+  background-image: url("../../src/img/keyboard.png"); }
 
 .front-header__heading {
   font-weight: bold;
@@ -364,7 +373,7 @@ a {
   color: #635C73; }
 
 h1 {
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Montserrat SemiBold', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -374,7 +383,8 @@ h1 {
 
 .user-reviews {
   background: no-repeat center url("../../src/img/testmonials-bg 2.png");
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+  margin: 0 auto; }
   .user-reviews .user-reviews__container {
     display: grid;
     justify-content: space-around;
@@ -393,7 +403,8 @@ h1 {
     text-align: justify;
     padding: 33px 45px 45px; }
   .user-reviews .user-reviews__heading {
-    padding: 57px 30px 53px; }
+    padding: 57px 30px 53px;
+    font-size: 34px; }
   .user-reviews .user-reviews__conclusion {
     position: relative;
     font-family: 'Lato-Regular', sans-serif;
@@ -415,11 +426,11 @@ h1 {
 .active {
   display: block; }
 
-@media (max-width: 320px) {
+@media (max-width: 321px) {
   .wrapper, .front-header, .user-reviews, .user-reviews .user-reviews__container {
     width: 320px; } }
 
-@media (max-width: 992px) and (min-width: 481px) {
+@media (max-width: 993px) and (min-width: 481px) {
   .user-reviews .user-reviews__container {
     grid-template-columns: 1fr 1fr; }
   .main-header__nav-mobile {
@@ -438,8 +449,10 @@ h1 {
     display: flex; } }
 
 @media (min-width: 1200px) {
-  .wrapper, .front-header {
+  .wrapper, .front-header, .user-reviews {
     width: 1200px; }
+  body {
+    background-image: linear-gradient(to right, #210 0%, #fff 50%, #012 100%); }
   .user-reviews .user-reviews__container {
     grid-template-columns: 1fr 1fr 1fr; }
   .main-header__nav-mobile {

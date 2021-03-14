@@ -1,6 +1,7 @@
 .user-reviews {
   background: no-repeat center url("../../src/img/testmonials-bg 2.png");
   background-size: 100% 100%;
+  margin: 0 auto;
 
   .user-reviews__container {
     display: grid;
@@ -30,6 +31,7 @@
 
   .user-reviews__heading {
     padding: 57px 30px 53px;
+    font-size: 34px;
   }
 
 

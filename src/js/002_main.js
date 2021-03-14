@@ -1,1 +1,0 @@
-console.log('выполнен 002_main.js');

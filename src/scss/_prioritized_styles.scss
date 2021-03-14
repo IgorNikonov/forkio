@@ -3,12 +3,12 @@
   display: block;
 }
 
-@media (max-width: $layout_320_minWidth) {
+@media (max-width: $breakpoint_320+1px) {
   .wrapper, .front-header, .user-reviews, .user-reviews .user-reviews__container  {
-    width: $layout_320_minWidth;
+    width: $breakpoint_320;
   }
 }
-@media (max-width: $layout_768_maxWidth) and (min-width: $layout_320_maxWidth+1) {
+@media (max-width: $breakpoint_992+1px) and (min-width: $breakpoint_480+1px) {
   .user-reviews .user-reviews__container {
     grid-template-columns: 1fr 1fr;
   }
@@ -20,7 +20,7 @@
   }
 
 }
-@media (max-width: $layout_1200_minWidth) and (min-width: $layout_768_maxWidth+1) {
+@media (max-width: $breakpoint_1200) and (min-width: $breakpoint_992+1px) {
   .user-reviews .user-reviews__container {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -34,9 +34,12 @@
     display: flex;
   }
 }
-@media (min-width: $layout_1200_maxWidth) {
-  .wrapper, .front-header  {
-    width: $layout_1200_maxWidth;
+@media (min-width: $breakpoint_1200) {
+  .wrapper, .front-header, .user-reviews  {
+    width: $breakpoint_1200;
+  }
+  body {
+    background-image: linear-gradient(to right, #210 0%, #fff 50%, #012 100%);
   }
 
   .user-reviews .user-reviews__container {

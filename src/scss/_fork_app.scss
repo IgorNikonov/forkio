@@ -2,15 +2,28 @@
 .front-header {
   box-sizing: border-box;
   position: relative;
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: 'Montserrat SemiBold', sans-serif;
   text-align: center;
   color: white;
-  //background: no-repeat center url("../../src/img/2.png"); //можно в одну строку
-  background-image: url("../../src/img/2.png"); // а можно и расписать
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: center;
   height: 600px;
   margin: 0 auto;
+}
+.front-header--mobile-mode {
+  //TODO -просто тест: определиться каким способом лучше
+  //background: no-repeat center url("../../src/img/2.png"); //можно в одну строку
+  background-image: url("../../src/img/2.png"); // а можно и так расписать
+  background-size: 100% 100%;
+}
+.front-header--tablet-mode {
+    background-image: url('../../src/img/keyboard-small.png');
+// ну ЗАХОТЕЛОСЬ мне сделать так, буд-то бы ЕЩЁ одна картинка на этом режиме есть!  ;-)
+// FIXME -еще один просто текст
+}
+.front-header--tablet-LG-mode {
+    background-image: url('../../src/img/keyboard.png');
+
 }
 .front-header__heading {
   font-weight: bold;
