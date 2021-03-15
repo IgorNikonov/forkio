@@ -1,4 +1,4 @@
-@media(min-width: 768px) {
+@media(min-width: 481px) {
   .what-you-get__heading {
     font-size: 42px;
     line-height: 44px;
@@ -18,7 +18,7 @@
   }
 }
 
-@media(min-width: 1200px) {
+@media(min-width: 993px) {
   .what-you-get {
     display: flex;
     background: #F4F4F4;
@@ -31,10 +31,14 @@
   .what-you-get__card {
     margin-bottom: 20px;
   }
+
+  .what-you-get__text {
+    min-width: 251px;
+  }
 }
 
 // Made another query for min 1200px bacause the .after1200px class styles won't apply otherwise
-@media(min-width: 1200px) {
+@media(min-width: 993px) {
   .after1200px {
     display: inline-block;
     margin-top: 0;

@@ -20,16 +20,20 @@
   .pricing__heading {
     margin-bottom: 30px;
   }
+
+  .pricing__card-container {
+    flex-wrap: nowrap;
+  }
 }
 
 // Interim
-@media(min-width: 768px) and (max-width: 1199px) {
+@media(min-width: 768px) and (max-width: 1200px) {
   .pricing__card-container {
     width: 560px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .pricing__card:last-of-type {
     position: relative;
     right: 8px;

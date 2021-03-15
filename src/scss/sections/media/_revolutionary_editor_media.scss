@@ -1,6 +1,7 @@
-@media(min-width: 768px) {
+@media(min-width: 481px) {
   .revolutionary-editor__heading {
     font-size: 42px;
+    line-height: 42px;
   }
 
   .revolutionary-editor__text {
@@ -9,7 +10,7 @@
   }
 }
 
-@media(min-width: 1200px) {
+@media(min-width: 993px) {
   .revolutionary-editor__btn-container {
     padding-bottom: 30px;
   }
