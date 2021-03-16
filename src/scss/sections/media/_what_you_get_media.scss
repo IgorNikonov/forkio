@@ -37,9 +37,9 @@
   }
 }
 
-// Made another query for min 1200px bacause the .after1200px class styles won't apply otherwise
+// Made another query for min 1200px bacause the .after993px class styles won't apply otherwise
 @media(min-width: 993px) {
-  .after1200px {
+  .after993px {
     display: inline-block;
     margin-top: 0;
     position: relative;

@@ -24,7 +24,7 @@
   background: rgba(255, 255, 255, 0.11);
   height: 457px;
   width: 257px;
-  margin: 15px 0;
+  margin: 15px auto;
 
   &__heading {
     background: rgba(255, 255, 255, 0.06);
@@ -70,6 +70,7 @@
 .card-bigger {
   background: rgba(70, 48, 72, 0.84);
   height: 535px;
+  margin: 15px auto;
   width: 290px;
 
   &__heading {

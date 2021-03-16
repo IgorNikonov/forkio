@@ -1,3 +1,7 @@
+// На 481 px ну никак не вмещаются 2 колонки.
+// Красиво отображается контент на всех разрешениях если делать брейкпоинты именно на 768 и 1200 px.
+// Я пытался по другому и так и сяк - не получается никак))
+
 @media(min-width: 768px) {
   .pricing {
     padding: 55px 0;
@@ -18,22 +22,17 @@
 
 @media(min-width: 1200px) {
   .pricing__heading {
+    font-size: 48px;
+    line-height: 50px;
     margin-bottom: 30px;
-  }
-
-  .pricing__card-container {
-    flex-wrap: nowrap;
   }
 }
 
 // Interim
-@media(min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   .pricing__card-container {
     width: 560px;
   }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
   .pricing__card:last-of-type {
     position: relative;
     right: 8px;
