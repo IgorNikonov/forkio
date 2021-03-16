@@ -6,7 +6,7 @@
 .pricing__card-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: $text-padding;
   margin: o auto;
@@ -16,7 +16,7 @@
   @include heading-font;
   line-height: 42px;
   color: $pricing-color;
-  font-size: $pricing-heading-font-size;
+  font-size: 28px;
   margin-bottom: 15px;
 }
 

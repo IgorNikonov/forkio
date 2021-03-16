@@ -1,0 +1,50 @@
+//@charset "UTF-8";
+// пути к шрифтам ОБЯЗАТЕЛЬНО прописывать с многоточиями пути: url("../../ и далее путь )
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Bold.woff2")  format('woff2');;
+  font-weight: Bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat SemiBold';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Semibold.woff2")  format('woff2');;
+  font-weight: Bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../../dist/fonts/Montserrat/Montserrat-Regular.woff2")  format('woff2');;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../../dist/fonts/Lato/Lato-Bold.woff2") format('woff2');;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../../dist/fonts/Lato/Lato-BoldItalic.woff2") format('woff2');;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../../dist/fonts/Lato/Lato-Regular.woff2") format('woff2');;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../../dist/fonts/Lato/Lato-Italic.woff2") format('woff2');;
+  font-weight: normal;
+  font-style: italic;
+}

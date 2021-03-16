@@ -2,6 +2,14 @@
 // Красиво отображается контент на всех разрешениях если делать брейкпоинты именно на 768 и 1200 px.
 // Я пытался по другому и так и сяк - не получается никак))
 
+@media (min-width: 600px) {
+  .pricing__heading {
+    font-size: 42px;
+    line-height: 44px;
+    margin-bottom: 30px;
+  }
+}
+
 @media(min-width: 768px) {
   .pricing {
     padding: 55px 0;
@@ -15,24 +23,23 @@
   }
 
   .pricing__heading {
-    font-size: 42px;
-    line-height: 44px;
+    font-size: 48px;
+    line-height: 50px;
   }
 }
 
-@media(min-width: 1200px) {
-  .pricing__heading {
-    font-size: 48px;
-    line-height: 50px;
-    margin-bottom: 30px;
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
   }
 }
 
 // Interim
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1180px) {
   .pricing__card-container {
-    width: 560px;
+    width: 610px;
   }
+
   .pricing__card:last-of-type {
     position: relative;
     right: 8px;
