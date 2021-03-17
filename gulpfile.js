@@ -1,82 +1,102 @@
-const gulp = require("gulp"),
-  clean = require("gulp-clean"),
-  concat = require("gulp-concat"),
-  imagemin = require("gulp-imagemin"),
-  sass = require("gulp-sass"),
-  browserSync = require("browser-sync").create();
+const gulp = require('gulp'),
+  concat = require('gulp-concat'),
+  clean = require('gulp-clean'),
+  uglify = require('gulp-uglify'),
+  cleanCss = require('gulp-clean-css'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  browserSync = require('browser-sync').create(),
+  imagemin = require('gulp-imagemin'),
+  babel = require('gulp-babel');
 
 sass.compiler = require("node-sass");
 
+// Paths
 const paths = {
-  html: "./index.html",
+  html: './index.html',
   src: {
-    scss:   "./src/scss/**/*.scss",
-    js:     "./src/js/*.js",
-    fonts:  "./src/fonts/",
-    img:    "./src/images/*",
+    scss: './src/scss/**/*.scss',
+    js: './src/js/*.js',
+    img: './src/img/*'
   },
-  build: {
-    value: "./dist/",
-    fonts: "./dist/fonts/",
-    css: "./dist/css/",
-    js: "./dist/js/",
-    img: "./dist/img/",
-  },
-};
+  dist: {
+    jsAndCss: './dist/',
+    img: './dist/img/',
+    self: './dist/'
+  }
+}
 
-/*** FUNCTIONS ***/
+// Functions
+const cleanDist = () => gulp.src(paths.dist.self, { allowEmpty: true }).pipe(clean());
 
-const buildJS = () =>
-  gulp
-    .src(paths.src.js)
-    .pipe(concat("script.js"))
-    .pipe(gulp.dest(paths.build.js));
-    // .pipe(browserSync.stream());
-
-const buildCSS = () =>
-  gulp
-    .src(paths.src.scss)
+const buildCss = () => (
+  gulp.src(paths.src.scss)
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(paths.build.css));
-    // .pipe(browserSync.stream());
+    .pipe(autoprefixer({ cascade: false }))
+    .pipe(cleanCss({ compatibility: 'ie8' }))
+    .pipe(concat('styles.min.css'))
+    .pipe(gulp.dest(paths.dist.jsAndCss))
+    .pipe(browserSync.stream({stream: true}))
+);
 
-const buildIMG = () =>
-  gulp
-    .src(paths.src.img)
+const buildJs = () => (
+  gulp.src(paths.src.js)
+    .pipe(concat('scripts.min.js'))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify({ toplevel: true }))
+    .pipe(gulp.dest(paths.dist.jsAndCss))
+    .pipe(browserSync.stream({stream: true}))
+);
+
+const buildImg = () => (
+  gulp.src(paths.src.img)
     .pipe(imagemin())
-    .pipe(gulp.dest(paths.build.img))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.dist.img))
+    .pipe(browserSync.stream({stream: true}))
+);
 
-const cleanBuild = () =>
-  gulp.src(paths.build.value, { allowEmpty: true }).pipe(clean());
+// doesn't work (says that I forgot to signal async completion)
+const build = () => {
+  return gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg));
+}
 
-const build = gulp.series(buildCSS, buildJS);
-
-const watcherGen = () => {
+// doesn't work either
+const dev = () => {
   browserSync.init({
     server: {
-      baseDir: "./",
+      baseDir: './',
     },
   });
-  gulp.watch(paths.src.scss, buildCSS).on("change", browserSync.reload);
-  gulp.watch(paths.src.js, buildJS).on("change", browserSync.reload);
-  gulp.watch(paths.src.img, buildIMG).on("change", browserSync.reload);
-  gulp.watch(paths.html, build).on("change", browserSync.reload);
-};
 
-const myWatcher=()=>{
-  gulp.watch(paths.src.scss, buildCSS);
-  gulp.watch(paths.src.js, buildJS)
-};
+  gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
+  gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
+  gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
+  // gulp.watch(paths.src.html, build).on('change', browserSync.reload);
+  
+  // gulp.watch('./src/scss/**/*.scss', buildCss).on('change', browserSync.reload);
+  // gulp.watch('./src/js/*.js', buildJs).on('change', browserSync.reload);
+  // gulp.watch('./src/img/*', buildImg).on('change', browserSync.reload);
+}
 
-/*** TASKS ***/
-gulp.task("clean", cleanBuild);
-gulp.task("buildCSS", buildCSS);
-gulp.task("buildJS", buildJS);
+// Tasks
+gulp.task('clean', cleanDist);
+gulp.task('buildCss', buildCss);
+gulp.task('buildJs', buildJs);
+gulp.task('buildImg', buildImg);
+
+// temporary task
+gulp.task('watchCss', function() {
+  return gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
+});
+
+// Main tasks
+gulp.task('build', build);
+gulp.task('dev', dev);
 
 
-gulp.task(
-  "default",
-  // gulp.series(cleanBuild, gulp.parallel(buildIMG, build), watcherGen)
-     myWatcher
-);
+
+exports.default = gulp.series(gulp.series(cleanDist, gulp.parallel(buildCss, buildJs, buildImg)), dev)
+
+// Had to hardcode because it didn't work the way it should have.

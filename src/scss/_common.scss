@@ -1,3 +1,11 @@
+
+/* --------Часть Влада --------------*/
+$layout_320_minWidth: 320px;
+$layout_320_maxWidth: 480px;
+$layout_768_maxWidth: 992px;
+$layout_1200_minWidth: 1200px;
+$layout_1200_maxWidth: 1200px;
+
 button {
   border: none;
 }
@@ -9,14 +17,39 @@ a {
   }
 }
 
+
 .text-sections-styling {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
 }
-
-.wrapper { // общий wrapper
+.wrapper, .container{ /*TODO спросить Игоря, может ему не нужен уже .container здесь.   общий wrapper*/
   width: 100%;
   margin: 0 auto;
-
 }
+
+/*--- Далее, и до конца- код Игоря: ----------  */
+  .container{max-width: 1200px;} /*TODO тоже спросить Игоря */
+
+// Variables
+$text-font-family: 'Lato', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+$text-line-height: 20px;
+$pricing-color: white;
+
+
+$rev-ed-heading-font-size: 26px;
+$pricing-heading-font-size: 28px;
+
+$text-padding: 0 20px;
+
+// Mixins
+@mixin heading-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+@media(min-width: 348px) {
+  $rev-ed-heading-font-size: 26px;
+}
+/*---- конец кода Игоря-------*/
