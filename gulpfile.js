@@ -71,7 +71,7 @@ const dev = () => {
   gulp.watch(paths.src.scss, buildCss).on('change', browserSync.reload);
   gulp.watch(paths.src.js, buildJs).on('change', browserSync.reload);
   gulp.watch(paths.src.img, buildImg).on('change', browserSync.reload);
-  gulp.watch(paths.html, build).on('change', browserSync.reload);
+  gulp.watch(paths.html).on('change', browserSync.reload);
 }
 
 // Tasks
