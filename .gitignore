@@ -1,0 +1,5 @@
+.idea
+*.rar
+*.zip
+*.md
+/node_modules
