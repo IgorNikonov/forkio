@@ -3,7 +3,6 @@ const breakpoint_480 = '480px';
 const breakpoint_992 = '992px';
 const breakpoint_1200 =  '1200px';
 
-
 const resizeSwClasses=()=>{   /*  здесь меняем фоновые картинки в зависимости от ширины экрана */
 
     const frontHeader = document.getElementsByClassName('front-header')[0];

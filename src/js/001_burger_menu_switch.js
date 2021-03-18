@@ -9,17 +9,16 @@ const burgerMenu = `    <li class="burger-menu-mobile__item"><a href="#">Overvie
     <li class="burger-menu-mobile__item"><a href="#">Support</a></li>`;
 
 const showMobileBurgerMenu=()=>{
-    burgerMenuSwitch.setAttribute('src', 'src/img/burger-menu-close-tab.svg');
+    burgerMenuSwitch.setAttribute('src', 'dist/img/burger-menu-close-tab.svg');
     burgerMenuMobile.innerHTML = burgerMenu;
     header.append(burgerMenuMobile);
     burgerMenuMobile.classList.toggle('active',true);
 };
 
 const hideMobileBurgerMenu=()=>{
-    burgerMenuSwitch.setAttribute('src', "src/img/burger-menu-start-tab.png");
+    burgerMenuSwitch.setAttribute('src', "dist/img/burger-menu-start-tab.png");
     burgerMenuMobile.classList.toggle('active',false);
 };
-
 
 burgerMenuSwitch.addEventListener('mouseover', showMobileBurgerMenu);
 burgerMenuSwitch.addEventListener('touchstart', showMobileBurgerMenu);

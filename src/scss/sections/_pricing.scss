@@ -8,7 +8,7 @@
   justify-content: space-around;
   align-items: center;
   padding: $text-padding;
-  margin: o auto;
+  margin: 0 auto;
 
   @media(min-width: 768px) {
     flex-direction: row;
