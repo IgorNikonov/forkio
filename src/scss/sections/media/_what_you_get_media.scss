@@ -1,0 +1,53 @@
+@media(min-width: 481px) {
+  .what-you-get__heading {
+    font-size: 42px;
+    line-height: 44px;
+  }
+
+  .what-you-get__card {
+    flex-direction: row;
+  }
+
+  .what-you-get__card__icon {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .card__flex-item {
+    text-align: left;
+  }
+}
+
+@media(min-width: 993px) {
+  .what-you-get {
+    display: flex;
+    background: #F4F4F4;
+  }
+
+  .what-you-get__heading {
+    display: none;
+  }
+
+  .what-you-get__card {
+    margin-bottom: 20px;
+  }
+
+  .what-you-get__text {
+    min-width: 251px;
+  }
+
+  .what-you-get__card__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Made another query for min 1200px bacause the .after993px class styles won't apply otherwise
+@media(min-width: 993px) {
+  .after993px {
+    display: inline-block;
+    margin-top: 0;
+    position: relative;
+    right: 75px;
+  }
+}

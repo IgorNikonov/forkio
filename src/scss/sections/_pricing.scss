@@ -1,42 +1,27 @@
 .pricing {
-  background: #634566;
+  padding-top: 10px;
 }
 
 .pricing__card-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: $text-padding;
-  margin: 0 auto;
-
-  @media(min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 0 70px;
-    
-  }
 }
 
 .pricing__heading {
   @include heading-font;
   line-height: 42px;
   color: $pricing-color;
-  font-size: $pricing-heading-font-size;
+  font-size: 28px;
   margin-bottom: 15px;
-
-  @media(min-width: 768px) {
-    font-size: 42px;
-    line-height: 44px;
-  }
 }
 
 .pricing__card {
   background: rgba(255, 255, 255, 0.11);
   height: 457px;
   width: 257px;
-  margin: 15px 0;
+  margin: 15px auto;
 
   &__heading {
     background: rgba(255, 255, 255, 0.06);
@@ -82,6 +67,7 @@
 .card-bigger {
   background: rgba(70, 48, 72, 0.84);
   height: 535px;
+  margin: 15px auto;
   width: 290px;
 
   &__heading {
@@ -99,11 +85,10 @@
     @extend .pricing__card__button;
     margin-top: 80px;
   }
+}
 
-  @media(min-width: 768px) {
-    // position: relative;
-    // right: 25px;
-  }
+.golower {
+  margin-top: 61px;
 }
 
 .line-after::after {

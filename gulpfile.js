@@ -34,8 +34,8 @@ const cleanDist = () => gulp.src(paths.dist.self, { allowEmpty: true }).pipe(cle
 const buildCss = () => (
     gulp.src(paths.src.scss)
         .pipe(sass().on("error", sass.logError))
-/*        .pipe(autoprefixer({ cascade: false }))
-        .pipe(cleanCss({ compatibility: 'ie8' }))*/
+        .pipe(autoprefixer({ cascade: false }))
+        .pipe(cleanCss({ compatibility: 'ie8' }))
         .pipe(concat('styles.min.css'))
         .pipe(gulp.dest(paths.dist.jsAndCss))
         .pipe(browserSync.stream({stream: true}))
@@ -44,10 +44,10 @@ const buildCss = () => (
 const buildJs = () => (
     gulp.src(paths.src.js)
         .pipe(concat('scripts.min.js'))
-/*        .pipe(babel({
+        .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(uglify({ toplevel: true }))*/
+        .pipe(uglify({ toplevel: true }))
         .pipe(gulp.dest(paths.dist.jsAndCss))
         .pipe(browserSync.stream({stream: true}))
 );
@@ -91,4 +91,4 @@ const dev = () => {
 };
 
 gulp.task('dev', dev);
-gulp.task('default', dev);
+gulp.task('default', gulp.series(build, dev));

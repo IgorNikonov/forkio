@@ -1,0 +1,41 @@
+@media(min-width: 481px) {
+  .revolutionary-editor__heading {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  .revolutionary-editor__text {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+
+@media(min-width: 993px) {
+  .revolutionary-editor__btn-container {
+    padding-bottom: 30px;
+  }
+
+  .revolutionary-editor__btn_left:hover {
+    cursor: pointer;
+  }
+
+  .revolutionary-editor__heading {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+// Interim
+@media(min-width: 920px) {
+  .revolutionary-editor__text {
+    width: 885px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+}
+
+@media(min-width: 450px) {
+  .revolutionary-editor__btn-container {
+    width: 430px;
+  }
+}

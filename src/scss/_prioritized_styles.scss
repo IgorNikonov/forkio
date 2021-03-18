@@ -38,9 +38,6 @@
   .wrapper, .front-header, .user-reviews  {
     width: $breakpoint_1200;
   }
-  body {
-    background-image: linear-gradient(to right, #210 0%, #fff 50%, #012 100%);
-  }
 
   .user-reviews .user-reviews__container {
     grid-template-columns: 1fr 1fr 1fr;

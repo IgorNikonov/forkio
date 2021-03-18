@@ -1,15 +1,21 @@
+// Common styles and fonts
 @import "./_reset.scss";
 @import "./_fonts";
 @import "./_common.scss";
-@import "./_header_bars.scss";
-@import "./_fork_app.scss";
-@import "./_about_fork.scss";
-@import "./_user-reviews.scss";
 
-/*Игоря файлы:*/
+// Sections
+@import "./sections/_about_fork.scss";
+@import "./sections/_user-reviews.scss";
+@import "./sections/_fork_app.scss";
+@import "./sections/_header_bars.scss";
 @import "./sections/_revolutionary_editor";
 @import "./sections/_what_you_get";
 @import "./sections/_pricing";
+
+// media queries
+@import "./sections/media/pricing_media";
+@import "./sections/media/revolutionary_editor_media";
+@import "./sections/media/what_you_get_media";
 
 /* Переопределения Влада (на основаниях медиа-запросов) */
 @import "./_prioritized_styles"; // стили используемые для переключения, должны обладать наибольшим весом
