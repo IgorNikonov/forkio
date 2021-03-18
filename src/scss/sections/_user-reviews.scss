@@ -1,0 +1,65 @@
+.user-reviews {
+  // background: no-repeat center url("./img/testmonials-bg 2.png");
+  // //background: no-repeat center url("../../src/img/testmonials-bg 2.png");
+  // background-size: 100% 100%;
+  // margin: 0 auto;
+
+  .user-reviews__container {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .user-reviews__card {
+
+    .user-reviews__img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .user-reviews__text {
+      font-family: 'Lato-Bold', sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      color: #FFFFFF;
+      text-align: justify;
+      padding: 33px 45px 45px;
+    }
+  }
+
+  .user-reviews__heading {
+    padding: 57px 30px 53px;
+    font-size: 34px;
+  }
+
+
+  .user-reviews__conclusion {
+    font-family: 'Lato-Regular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #A291A5;
+    padding: 3px 45px 38px;
+    //margin: 3px 45px 38px;
+    //border-bottom: 3px solid #645766;  //так можно сделать без псевдо-класса
+    &::after {
+      content: '';
+      position: relative;
+      top: 15px;
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      line-height: 40px;
+      border-bottom: 2px solid #645766; //а так привязка к ширине
+    }
+  }
+}
+
+
+
+

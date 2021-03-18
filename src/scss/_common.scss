@@ -1,0 +1,51 @@
+$layout_320_minWidth: 320px;
+$layout_320_maxWidth: 480px;
+$layout_768_maxWidth: 992px;
+$layout_1200_minWidth: 1200px;
+$layout_1200_maxWidth: 1200px;
+
+button {
+  border: none;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.text-sections-styling {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.wrapper{
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+$text-font-family: 'Lato', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+$text-line-height: 20px;
+$pricing-color: white;
+
+$text-padding: 0 20px;
+
+@mixin heading-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+section, header {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.mutual-background {
+  background: no-repeat center url("./img/testmonials-bg 2.png");
+//background: no-repeat center url("../../src/img/testmonials-bg 2.png");
+background-size: 100% 100%;
+margin: 0 auto;
+}

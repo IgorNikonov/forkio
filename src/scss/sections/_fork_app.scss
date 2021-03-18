@@ -1,0 +1,76 @@
+@import './variables';
+.front-header {
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Montserrat SemiBold', sans-serif;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+  margin: 0 auto;
+}
+.front-header--mobile-mode {
+  background-image: url("./img/2.png"); // а можно и так расписать
+  //background-image: url("../../src/img/2.png"); // а можно и так расписать
+  background-size: 100% 100%;
+}
+.front-header--tablet-mode {
+    background-image: url('./img/keyboard-small.png');
+    //background-image: url('../../src/img/keyboard-small.png');
+// ну ЗАХОТЕЛОСЬ мне сделать так, буд-то бы ЕЩЁ одна картинка на этом режиме есть!  ;-)
+// FIXME -еще один просто текст
+}
+.front-header--tablet-LG-mode {
+    background-image: url('./img/keyboard.png');
+    //background-image: url('../../src/img/keyboard.png');
+
+}
+.front-header__heading {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 48px;
+  color: #FFFFFF;
+  padding-top: 60px;
+  padding-bottom: 19px;
+}
+.front-header__text {
+  font-size: 18px;
+  line-height: 24px;
+  color: #8D81AC;
+  padding: 20px 25px 18px;
+}
+.front-header__version {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #848E97;
+}
+.download-subsection {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-80%);
+
+  .front-header--download-btn {
+    width: 160%;
+  }
+
+  .front-header__trial-period-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #848E97;
+    bottom: -18px;
+    padding-top: 14px;
+    width: 160%;
+  }
+}
+.revolutionary-editor__heading {
+  padding-top: 130px;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #635C73;
+}

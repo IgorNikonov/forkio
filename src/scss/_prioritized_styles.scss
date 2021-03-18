@@ -1,0 +1,54 @@
+@import "./variables";
+.active{
+  display: block;
+}
+
+@media (max-width: $breakpoint_320+1px) {
+  .wrapper, .front-header, .user-reviews, .user-reviews .user-reviews__container  {
+    width: $breakpoint_320;
+  }
+}
+@media (max-width: $breakpoint_992+1px) and (min-width: $breakpoint_480+1px) {
+  .user-reviews .user-reviews__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main-header__nav-mobile {
+    display: none;
+  }
+  .main-header__nav-tablet {
+    display: block;
+  }
+
+}
+@media (max-width: $breakpoint_1200) and (min-width: $breakpoint_992+1px) {
+  .user-reviews .user-reviews__container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main-header__nav-mobile {
+    display: none;
+  }
+  .main-header__nav-tablet {
+    display: none;
+  }
+  .main-header__nav-LG {
+    display: flex;
+  }
+}
+@media (min-width: $breakpoint_1200) {
+  .wrapper, .front-header, .user-reviews  {
+    width: $breakpoint_1200;
+  }
+
+  .user-reviews .user-reviews__container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main-header__nav-mobile {
+    display: none;
+  }
+  .main-header__nav-tablet {
+    display: none;
+  }
+  .main-header__nav-LG {
+    display: flex;
+  }
+}

@@ -1,5 +1,7 @@
 .idea
+node_modules/**/*
+*.docx
 *.rar
 *.zip
 *.md
-/node_modules
+!readme.md

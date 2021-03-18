@@ -1,0 +1,143 @@
+.main-header{
+  padding: 32px 16px 30px;
+  background-color: #27262A;
+}
+.main-header__nav-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header__nav-tablet {
+  display: none;
+  color: #8D81AC;
+  .main-header__nav-tablet-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-header__nav-tablet-second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+.main-header__nav-LG {
+  display: none;
+  color: #8D81AC;
+  justify-content: space-between;
+  .main-header__menu-LG {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+}
+.main-header__menu-items {
+  list-style: none;
+  }
+.main-header__menu-items-href {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  color: #8D81AC;
+  &:hover {
+    color: white;
+  }
+}
+.main-nav__logo {
+     width: 43px;
+     height: 41px;
+  //про подмену изображения в CSS:  https://overcoder.net/q/359230/%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D0%BE%D0%B5-img-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-css
+     &:hover {     // замена через CSS изображения: старое сворачиваем по width:0, height: 0, а новое добавляем через background-image и размер даем через padding
+       background: no-repeat url("./img/main-nav__logo_white1.png");
+       background-size: 100%;
+       padding: 21px;
+       width: 0;
+       height: 0;
+     }
+}
+.main-nav__forkio-logo {
+  color: #8D81AC;
+  position: relative;
+  top: -10px;
+  padding: 0 0 20px 10px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 700;
+  padding: 11px 25px;
+  border-radius: 40px;
+  background-color: #8D81AC;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #8D81AC;
+  }
+}
+
+.main-nav__burger-menu-tab {
+  width: 35px;
+  height: 35px;
+}
+.burger-menu-mobile {
+  display: none;  // по-загрузке страницы, выпадающее меню на моб.прилож.д/б выключено (включается скриптом)
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 105px;
+  right: 13px;
+  width: 92%;
+  background-color: #333333;
+  z-index: 2;
+}
+
+.burger-menu-mobile__item {
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  padding-top: 29px;
+  padding-bottom: 21px;
+  padding-left: 48px;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 400;
+  border-bottom: 2px solid gray;
+
+
+  & a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #8D81AC;
+
+      &::before {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        content: '';
+        border-left: 8px solid #8D81AC;
+        height: 53px;
+        line-height: 53px;
+      }
+    }
+  }
+}
+
